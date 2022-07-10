@@ -59,7 +59,7 @@ workflow SampleWorkflow {
     }
 
     scatter (readgroup in sample.readgroups) {
-        String readgroupDir = outputDir + "/lib_" + readgroup.lib_id + "--rg_" + readgroup.id
+        String readgroupDir = outputDir
         String rgLine ='"ID:${readgroup.id}" "LB:${readgroup.lib_id}" "PL:${platform}" "SM:${sample.id}"'
 
         call qcWorkflow.QC as qc {
